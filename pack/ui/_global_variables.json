@@ -1,0 +1,28 @@
+{
+  // Novayclient global UI variables (Minecraft Bedrock 1.19.50 syntax).
+  //
+  // Only the variables this pack actually owns are declared; everything else
+  // stays at its vanilla value because UI files merge per element and per key.
+  // Colours mirror tools/gen_assets.py so artwork and layout cannot drift.
+
+  // Palette ---------------------------------------------------------------
+  "$novay_accent": [ 0.298, 0.851, 1.0 ],
+  "$novay_accent_dark": [ 0.106, 0.494, 0.62 ],
+  "$novay_ink": [ 0.039, 0.051, 0.075 ],
+  "$novay_text": [ 0.902, 0.922, 0.957 ],
+  "$novay_muted": [ 0.549, 0.608, 0.706 ],
+
+  // Tuning ---------------------------------------------------------------
+  // Chat row backdrop opacity (vanilla uses 0.7 on textures/ui/Black).
+  "$novay_chat_alpha": 0.72,
+
+  // In-game identity chip: small, faint, and clear of hunger, bubbles and the
+  // auto-save icon. Set the alpha to 0 to hide it without a UI edit.
+  "$novay_hud_chip_size": [ 45, 10.5 ],
+  "$novay_hud_chip_offset": [ -4, 44 ],
+  "$novay_hud_chip_alpha": 0.55,
+
+  // Pause-menu plate (textures/ui/novay_logo is 120x28).
+  "$novay_pause_chip_size": [ 72, 16.8 ],
+  "$novay_pause_chip_alpha": 0.85
+}

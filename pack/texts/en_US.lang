@@ -1,0 +1,15 @@
+## Novayclient en_US.lang
+## English only (blueprint §2.1).
+##
+## The pack never re-words a vanilla screen, so every vanilla key is absent on
+## purpose: untouched keys fall back to the game's own strings. The keys below
+## exist for tooling and for any future Novay-branded control.
+
+## ------------------------------------------------
+## Novayclient-owned strings
+## ------------------------------------------------
+pack.name=Novayclient
+pack.description=A lightweight client-style UI pack for Minecraft Bedrock 1.19.50
+
+novay.pause.brand=Novayclient
+novay.hud.brand=NC
