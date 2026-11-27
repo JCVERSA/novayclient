@@ -1,0 +1,17 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Novayclient",
+    "description": "A lightweight client-style UI pack for Minecraft Bedrock 1.19.50",
+    "uuid": "a40a2ad7-db95-41d5-8a17-3d1809a128fe",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 19, 50]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "22489408-3040-45d4-9f68-7ab82c0e8f98",
+      "version": [1, 0, 0]
+    }
+  ]
+}

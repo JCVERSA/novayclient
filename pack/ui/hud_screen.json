@@ -1,0 +1,83 @@
+{
+  // Novayclient — HUD layer
+  //
+  // Source basis: vanilla Minecraft Bedrock 1.19.50.2 ui/hud_screen.json
+  // (namespace "hud"). Every entry is an additive merge against an element
+  // that exists in that exact file; nothing is removed, reordered, rebound or
+  // hidden. Touch buttons, chat input, hotbar buttons and every status
+  // renderer keep vanilla behaviour.
+  //
+  // JSON UI merges per element, so unmentioned elements stay byte-identical to
+  // vanilla — which is why this file is this small.
+  "namespace": "hud",
+
+  // -----------------------------------------------------------------------
+  // Chat rows.
+  // Vanilla: chat_grid_item -> chat_background (textures/ui/Black, alpha 0.7).
+  // Change the surface only: Novay panel tint, tuned alpha, 1px accent edge at
+  // the left of each row. The text factory, row sizes and the fade animation
+  // are inherited untouched, so chat readability and scaling are unchanged.
+  // -----------------------------------------------------------------------
+  "chat_grid_item/chat_background": {
+    "alpha": "$novay_chat_alpha",
+    "color": "$novay_ink",
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "novay_chat_edge": {
+              "type": "image",
+              "texture": "textures/ui/Black",
+              "size": [ 1, "100%c" ],
+              "anchor_from": "left_middle",
+              "anchor_to": "left_middle",
+              "color": "$novay_accent_dark",
+              "alpha": 0.85,
+              "layer": 2
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  // -----------------------------------------------------------------------
+  // In-game identity chip.
+  // Appended as the last child of the vanilla root panel, which only anchors
+  // its children absolutely, so this cannot move existing HUD elements.
+  // Placement (top-right, y offset 44) clears the hunger bar, bubble counters
+  // and the auto-save icon; alpha is intentionally low so it reads as a
+  // water-mark rather than an overlay. Hide it via $novay_hud_chip_alpha.
+  // -----------------------------------------------------------------------
+  "root_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "novay_brand_chip": {
+              "type": "image",
+              "texture": "textures/ui/novay_logo",
+              "size": "$novay_hud_chip_size",
+              "anchor_from": "top_right",
+              "anchor_to": "top_right",
+              "offset": "$novay_hud_chip_offset",
+              "layer": 3,
+              "alpha": "$novay_hud_chip_alpha",
+              "bindings": [
+                {
+                  "binding_name": "#hud_visible_not_centered",
+                  "binding_name_override": "#visible",
+                  "binding_type": "global"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

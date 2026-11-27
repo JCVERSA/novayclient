@@ -1,0 +1,39 @@
+{
+  // Novayclient — pause menu layer
+  //
+  // Source basis: vanilla Minecraft Bedrock 1.19.50.2 ui/pause_screen.json
+  // (namespace "pause").
+  //
+  // The single change is a branding plate appended to the existing menu stack
+  // (`pause_screen_menu`). That stack already owns the menu column's layout, so
+  // one fixed-height child is simply added below the existing entries; Resume,
+  // Settings, Save & Exit, the player list and the skin panel keep their exact
+  // bindings, focus order and hit areas.
+  //
+  // The menu frame itself is re-skinned without any JSON: this pack ships
+  // textures/ui/pause_screen_border.png at the vanilla 5x5 / nine-slice 1 size.
+  "namespace": "pause",
+
+  "pause_screen_menu": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "novay_pause_brand": {
+              "type": "image",
+              "texture": "textures/ui/novay_logo",
+              "size": "$novay_pause_chip_size",
+              "anchor_from": "bottom_middle",
+              "anchor_to": "bottom_middle",
+              "offset": [ 0, -6 ],
+              "layer": 4,
+              "alpha": "$novay_pause_chip_alpha"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+# Build output (regenerate with `python3 tools/build.py`)
+build/
+
+# Optional Low Fire pack built from your own game files
+build/Novayclient_LowFire.mcpack
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS noise
+.DS_Store
+Thumbs.db
